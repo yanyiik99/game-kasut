@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Kasut Bali!</title>
+</head>
+<body>
+    
+    <script>
+        let tanya = true;
+
+        while(tanya){
+
+            // Memasukkan input user dengan : batu /gunting / kertas;
+            let player = prompt("Masukkan (K/B/G) Huruf Kapital :");
+           
+        
+
+            // Memasukkan input computer dengan bilangan random
+            //Menggunakan math.random();
+            let computer = Math.random();
+            
+            //Membuat rules dari Compter
+            if(computer < 0.33){
+                computer = ("B");
+            }else if(computer >= 0.33 && computer <= 0.66){
+                computer = ("G");
+            }else {
+                computer = ("K")
+            }
+            console.log(typeof(computer));
+            
+            
+            
+            /* Membuat Rules Game kasutnya
+            Player = kertas x comp = Batu => Player "MENANG", else "KALAH";
+            Player = Batu x comp = Gunting => Player "Menang", else "Kalah";
+            Player = Gunting x comp = Kertas => Player "Menang", else "KALAH";
+            */
+        
+           
+            let result = "";
+            if(player == computer){     //SERI
+                
+                result = "SERI";
+
+            }else if(player == "K"){
+                if(computer == "B"){           
+                    result = "MENANG";
+                }else {
+                    result = "KALAH";
+                }
+            
+            }else if(player == "B"){
+                if(computer == "G"){
+                    result = "MENANG";
+                }else{
+                    result = "KALAH";
+                }
+            
+            }else if(player == "G"){
+                if(computer == "K"){
+                    result = "MENANG"
+                }else {
+                    result = "KALAH";
+                }
+            
+            }else{
+                computer = "Lagi Ngambek";
+                result = "Tolong masukkan dengan benar!!";
+            }
+
+        
+            //Mengubah Nilai Parameter yang di Inputkan oleh user
+            if(player === "K"){
+                player = "Kertas";
+            }else if(player === "B"){
+                player = "Batu";
+            }else if(player === "G"){
+                player = "Gunting";
+            }
+
+            //Mengubah Nilai Parameter Computer random
+            if(computer === "K"){
+                computer = "Kertas";
+            }else if(computer === "B"){
+                computer = "Batu";
+            }else if(computer === "G"){
+                computer = "Gunting";
+            }else{
+                computer = "Lagi Ngambek"
+            }
+            
+
+            //Menampilkan Hasil dari Gamenya 
+            alert(`kamu memasukkan : ${player} \nComputer Memasukkan : ${computer} \nHasil Kamu : ${result}`);
+
+            // Pertanyaan mau bermain lagi?
+            tanya = confirm("Mau bermain lagi ?");
+
+        }
+    </script>
+
+</body>
+</html>
