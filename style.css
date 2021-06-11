@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+    color: blue;
+    font-size: 500%;
+}
+
+.logo {
+    background-image: url(img/profile.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
